@@ -674,6 +674,9 @@ export default function CanastraApp() {
                     </label>
                     <input 
                       type="number" pattern="[0-9]*" inputMode="numeric"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') document.getElementById('save-round-btn').click();
+                      }}
                       value={pointModal.t2Score} onChange={e => setPointModal({...pointModal, t2Score: e.target.value})}
                       className="w-full text-4xl p-4 font-mono font-black bg-white dark:bg-gray-900 border-2 border-transparent focus:border-emerald-500 rounded-xl outline-none dark:text-white transition-all text-center shadow-inner"
                       placeholder="0"
